@@ -66,7 +66,7 @@ func (a *ALB) Delete(d *CourierALB) error {
 				appendix = fmt.Sprintf("\nOUTPUT:\n%v", *res)
 			}
 
-			log.Printf("Error: deleting rule: %w\nINPUT:\n%v%s", err, *input, appendix)
+			log.Printf("Error: deleting rule: %s\nINPUT:\n%v%s", err.Error(), *input, appendix)
 
 			return fmt.Errorf("deleting rule: %w", err)
 		}

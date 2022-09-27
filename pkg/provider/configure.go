@@ -12,7 +12,7 @@ type ProviderInstance struct {
 
 func providerConfigure() func(*schema.ResourceData) (interface{}, error) {
 	return func(d *schema.ResourceData) (interface{}, error) {
-		s := tfsdk.AWSSessionFromResourceData(&tfsdk.Resource{d})
+		s := tfsdk.AWSSessionFromResourceData(&tfsdk.Resource{ResourceData: d})
 
 		return &ProviderInstance{
 			AWSSession: s,

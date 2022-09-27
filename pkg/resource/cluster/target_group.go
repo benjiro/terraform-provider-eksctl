@@ -2,11 +2,11 @@ package cluster
 
 import (
 	"fmt"
+	"log"
+
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/session"
-	"github.com/aws/aws-sdk-go/service/elbv2"
 	"github.com/aws/aws-sdk-go/service/resourcegroupstaggingapi"
-	"log"
 )
 
 const (
@@ -51,18 +51,4 @@ func getTargetGroupARNs(sess *session.Session, clusterNamePrefixy string) ([]str
 	}
 
 	return arns, nil
-}
-
-func deleteTargetGroups(set *ClusterSet) error {
-	elb := elbv2.New(AWSSessionFromCluster(set.Cluster))
-
-	for _, tgARN := range set.Cluster.TargetGroupARNs {
-		log.Printf("Deleting target group %s for %s", tgARN, set.ClusterName)
-
-		if _, err := elb.DeleteTargetGroup(&elbv2.DeleteTargetGroupInput{TargetGroupArn: aws.String(tgARN)}); err != nil {
-			return fmt.Errorf("deleting target group %s for %s", tgARN, set.ClusterName)
-		}
-	}
-
-	return nil
 }

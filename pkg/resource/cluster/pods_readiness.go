@@ -2,11 +2,11 @@ package cluster
 
 import (
 	"fmt"
-	"github.com/mumoshu/terraform-provider-eksctl/pkg/sdk"
-	"io/ioutil"
 	"os"
 	"os/exec"
 	"strings"
+
+	"github.com/mumoshu/terraform-provider-eksctl/pkg/sdk"
 )
 
 func doCheckPodsReadiness(ctx *sdk.Context, cluster *Cluster, id string) error {
@@ -14,7 +14,7 @@ func doCheckPodsReadiness(ctx *sdk.Context, cluster *Cluster, id string) error {
 		return nil
 	}
 
-	kubeconfig, err := ioutil.TempFile("", "terraform-provider-eksctl-kubeconfig-")
+	kubeconfig, err := os.CreateTemp("", "terraform-provider-eksctl-kubeconfig-")
 	if err != nil {
 		return err
 	}

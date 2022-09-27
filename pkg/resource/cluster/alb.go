@@ -51,7 +51,7 @@ func planListenerChanges(cluster *Cluster, oldId, newId string) (ListenerStatuse
 		}
 
 		var arns []*string
-		for arn, _ := range listenerStatuses {
+		for arn := range listenerStatuses {
 			arns = append(arns, aws.String(arn))
 		}
 

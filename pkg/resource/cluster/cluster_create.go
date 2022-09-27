@@ -3,7 +3,6 @@ package cluster
 import (
 	"bytes"
 	"fmt"
-	"io/ioutil"
 	"log"
 	"os"
 	"os/exec"
@@ -91,7 +90,7 @@ func doWriteKubeconfig(ctx *sdk.Context, d api.ReadWrite, clusterName, region st
 	}
 
 	if path == "" {
-		kubeconfig, err := ioutil.TempFile(os.TempDir(), "tf-eksctl-kubeconfig")
+		kubeconfig, err := os.CreateTemp(os.TempDir(), "tf-eksctl-kubeconfig")
 		if err != nil {
 			return fmt.Errorf("failed generating kubeconfig path: %w", err)
 		}

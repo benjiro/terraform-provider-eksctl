@@ -5,10 +5,11 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"github.com/mumoshu/terraform-provider-eksctl/pkg/sdk"
-	"github.com/mumoshu/terraform-provider-eksctl/pkg/sdk/api"
 	"log"
 	"time"
+
+	"github.com/mumoshu/terraform-provider-eksctl/pkg/sdk"
+	"github.com/mumoshu/terraform-provider-eksctl/pkg/sdk/api"
 
 	"github.com/mumoshu/terraform-provider-eksctl/pkg/courier"
 	"github.com/rs/xid"
@@ -227,7 +228,7 @@ func (m *Manager) PrepareClusterSet(d api.UniqueResourceGetter, optNewId ...stri
 	}
 
 	if id == "" {
-		return nil, errors.New("Missing Resource ID. This must be a bug!")
+		return nil, errors.New("missing Resource ID. This must be a bug")
 	}
 
 	clusterName := m.getClusterName(a, id)
