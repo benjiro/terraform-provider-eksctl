@@ -25,7 +25,7 @@ func Run(cmd *exec.Cmd) (*CommandResult, error) {
 	if err != nil {
 		return nil, err
 	}
-	cmd.Stderr = pw
+
 	cmd.Stdout = pw
 
 	output, _ := circbuf.NewBuffer(maxBufSize)
