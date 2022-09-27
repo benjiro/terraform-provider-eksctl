@@ -3,11 +3,12 @@ package courier
 import (
 	"context"
 	"fmt"
+	"log"
+	"time"
+
 	"github.com/aws/aws-sdk-go/service/elbv2/elbv2iface"
 	"github.com/mumoshu/terraform-provider-eksctl/pkg/sdk"
 	"golang.org/x/sync/errgroup"
-	"log"
-	"time"
 )
 
 func DoGradualTrafficShift(ctx context.Context, svc elbv2iface.ELBV2API, l ListenerStatus, p int, opts CanaryOpts) error {

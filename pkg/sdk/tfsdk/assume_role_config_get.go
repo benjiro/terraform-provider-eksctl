@@ -1,10 +1,11 @@
 package tfsdk
 
 import (
+	"log"
+
 	"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
 	"github.com/mumoshu/terraform-provider-eksctl/pkg/sdk"
 	"github.com/mumoshu/terraform-provider-eksctl/pkg/sdk/api"
-	"log"
 )
 
 func GetAssumeRoleConfig(d api.Getter, opts ...SchemaOption) (config *sdk.AssumeRoleConfig) {

@@ -2,10 +2,11 @@ package sdk
 
 import (
 	"fmt"
-	"github.com/google/go-cmp/cmp"
 	"os/exec"
 	"strings"
 	"testing"
+
+	"github.com/google/go-cmp/cmp"
 )
 
 func TestRun_err(t *testing.T) {

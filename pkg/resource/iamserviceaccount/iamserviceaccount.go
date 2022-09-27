@@ -1,10 +1,11 @@
 package iamserviceaccount
 
 import (
+	"os/exec"
+
 	"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
 	"github.com/mumoshu/terraform-provider-eksctl/pkg/sdk"
 	"github.com/mumoshu/terraform-provider-eksctl/pkg/sdk/tfsdk"
-	"os/exec"
 )
 
 const KeyNamespace = "namespace"

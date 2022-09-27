@@ -4,14 +4,15 @@ import (
 	"context"
 	"errors"
 	"fmt"
+	"log"
+	"strconv"
+	"strings"
+
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/service/elbv2"
 	"github.com/google/go-cmp/cmp"
 	"golang.org/x/sync/errgroup"
 	"golang.org/x/xerrors"
-	"log"
-	"strconv"
-	"strings"
 )
 
 func (a *ALB) Apply(d *CourierALB) error {

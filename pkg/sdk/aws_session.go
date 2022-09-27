@@ -1,10 +1,11 @@
 package sdk
 
 import (
+	"os"
+
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/credentials/stscreds"
 	"github.com/aws/aws-sdk-go/aws/session"
-	"os"
 )
 
 func AWSSession(region, profile string, assumeRoleConfig *AssumeRoleConfig) *session.Session {

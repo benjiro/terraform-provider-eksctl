@@ -2,11 +2,12 @@ package courier
 
 import (
 	"fmt"
+	"strconv"
+	"time"
+
 	"github.com/mumoshu/terraform-provider-eksctl/pkg/sdk/api"
 	"github.com/mumoshu/terraform-provider-eksctl/pkg/sdk/tfsdk"
 	"golang.org/x/xerrors"
-	"strconv"
-	"time"
 )
 
 type ALBSchema struct {

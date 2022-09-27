@@ -3,8 +3,9 @@ package metrics
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/aws/aws-sdk-go/service/cloudwatch/cloudwatchiface"
 	"time"
+
+	"github.com/aws/aws-sdk-go/service/cloudwatch/cloudwatchiface"
 
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/service/cloudwatch"

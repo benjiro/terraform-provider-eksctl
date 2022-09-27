@@ -2,13 +2,14 @@ package courier
 
 import (
 	"fmt"
+	"time"
+
 	"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
 	"github.com/hashicorp/terraform-plugin-sdk/helper/validation"
 	"github.com/mumoshu/terraform-provider-eksctl/pkg/courier"
 	"github.com/mumoshu/terraform-provider-eksctl/pkg/sdk/tfsdk"
 	"github.com/rs/xid"
 	"golang.org/x/xerrors"
-	"time"
 )
 
 var MetricResourceSchema = map[string]*schema.Schema{

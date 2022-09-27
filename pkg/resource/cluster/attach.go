@@ -2,13 +2,14 @@ package cluster
 
 import (
 	"fmt"
+	"log"
+	"strings"
+
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/awserr"
 	"github.com/aws/aws-sdk-go/service/autoscaling"
 	"github.com/aws/aws-sdk-go/service/cloudformation"
 	"github.com/mumoshu/terraform-provider-eksctl/pkg/sdk"
-	"log"
-	"strings"
 )
 
 func doAttachAutoScalingGroupsToTargetGroups(ctx *sdk.Context, set *ClusterSet) error {

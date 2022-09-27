@@ -2,14 +2,15 @@ package courier
 
 import (
 	"fmt"
+	"log"
+	"strconv"
+	"time"
+
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/elbv2"
 	"github.com/mumoshu/terraform-provider-eksctl/pkg/sdk"
 	"golang.org/x/xerrors"
-	"log"
-	"strconv"
-	"time"
 )
 
 type CourierALB struct {

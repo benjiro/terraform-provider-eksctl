@@ -3,13 +3,14 @@ package sdk
 import (
 	"bufio"
 	"fmt"
-	"github.com/mumoshu/shoal"
-	"golang.org/x/sync/errgroup"
-	"golang.org/x/xerrors"
 	"io"
 	"log"
 	"path/filepath"
 	"sync"
+
+	"github.com/mumoshu/shoal"
+	"golang.org/x/sync/errgroup"
+	"golang.org/x/xerrors"
 )
 
 var prepareExecMu sync.Mutex
@@ -23,7 +24,7 @@ func PrepareExecutable(defaultPath, pkgAndCmdName, pkgVersion string) (*string, 
 		},
 	}
 
-	rig := "https://github.com/fishworks/fish-food"
+	rig := "https://github.com/tinned-fish/gofish"
 
 	doInstall := pkgVersion != ""
 

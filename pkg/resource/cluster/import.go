@@ -3,8 +3,9 @@ package cluster
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
 	"strings"
+
+	"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
 )
 
 func (m *Manager) importCluster(d *schema.ResourceData) (*schema.ResourceData, error) {

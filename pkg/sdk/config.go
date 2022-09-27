@@ -5,4 +5,3 @@ type Config struct {
 	Profile    string
 	AssumeRole *AssumeRoleConfig
 }
-

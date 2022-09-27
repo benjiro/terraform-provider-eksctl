@@ -3,11 +3,12 @@ package courier
 import (
 	"context"
 	"fmt"
+	"log"
+	"time"
+
 	"github.com/aws/aws-sdk-go/service/route53"
 	"github.com/k-kinzal/progressived/pkg/provider"
 	"golang.org/x/xerrors"
-	"log"
-	"time"
 )
 
 type Route53RecordSetRouter struct {

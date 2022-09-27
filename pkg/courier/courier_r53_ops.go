@@ -3,14 +3,15 @@ package courier
 import (
 	"context"
 	"fmt"
+	"log"
+	"time"
+
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/service/route53"
 	"github.com/mumoshu/terraform-provider-eksctl/pkg/sdk/api"
 	"github.com/mumoshu/terraform-provider-eksctl/pkg/sdk/tfsdk"
 	"golang.org/x/sync/errgroup"
 	"golang.org/x/xerrors"
-	"log"
-	"time"
 )
 
 func CreateOrUpdateCourierRoute53Record(d api.Getter, mSchema *MetricSchema) error {

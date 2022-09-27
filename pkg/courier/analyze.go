@@ -3,14 +3,15 @@ package courier
 import (
 	"bytes"
 	"fmt"
+	"os"
+	"text/template"
+	"time"
+
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/service/cloudwatch"
 	"github.com/mumoshu/terraform-provider-eksctl/pkg/courier/metrics"
 	"github.com/mumoshu/terraform-provider-eksctl/pkg/sdk"
 	"golang.org/x/xerrors"
-	"os"
-	"text/template"
-	"time"
 )
 
 func MetricsToAnalyzers(region, profile string, assumeRoleConfig *sdk.AssumeRoleConfig, ms []Metric) ([]*Analyzer, error) {

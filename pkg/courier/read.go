@@ -3,10 +3,11 @@ package courier
 import (
 	"errors"
 	"fmt"
-	"github.com/mumoshu/terraform-provider-eksctl/pkg/sdk/api"
-	"golang.org/x/xerrors"
 	"strconv"
 	"time"
+
+	"github.com/mumoshu/terraform-provider-eksctl/pkg/sdk/api"
+	"golang.org/x/xerrors"
 )
 
 func ReadListenerRule(m api.Lister, schema *ALBSchema) (*ListenerRule, error) {
