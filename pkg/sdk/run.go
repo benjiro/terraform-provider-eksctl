@@ -5,15 +5,16 @@ import (
 	"crypto/sha256"
 	"encoding/json"
 	"fmt"
-	"github.com/armon/circbuf"
-	"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
-	"github.com/mitchellh/go-linereader"
 	"io"
 	"log"
 	"os"
 	"os/exec"
 	"strings"
 	"syscall"
+
+	"github.com/armon/circbuf"
+	"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
+	"github.com/mitchellh/go-linereader"
 )
 
 func Run(cmd *exec.Cmd) (*CommandResult, error) {
@@ -24,7 +25,6 @@ func Run(cmd *exec.Cmd) (*CommandResult, error) {
 	if err != nil {
 		return nil, err
 	}
-	cmd.Stderr = pw
 	cmd.Stdout = pw
 
 	output, _ := circbuf.NewBuffer(maxBufSize)
